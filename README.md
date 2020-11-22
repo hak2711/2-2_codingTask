@@ -1,6 +1,6 @@
 # 2-2_codingTask
 
-##Subjects
+## Subjects
 
 <ol>
   <li>Data structure</li>
