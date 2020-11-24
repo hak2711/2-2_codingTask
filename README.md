@@ -6,7 +6,7 @@
   <li>Data structure</li>
       <ul>
         <li>수식의 표현</li>
-        <li>위상 정렬(스택, 큐를 이용)<
+        <li>위상 정렬(스택, 큐를 이용)</li>
       </ul>
   <li>Java programming practice</li>
       <ul>
