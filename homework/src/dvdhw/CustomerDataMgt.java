@@ -17,14 +17,40 @@ public class CustomerDataMgt extends DataMgt<Customer> {
 
 	@Override
 	public Customer selectByName(String name) {
+		int slength = name.length();
 
-		for (Customer obj : collect) { // Vector에 저장된 고객 중 이름이 일치하는 고객 있다면 리턴해줌. 없으면 null 리턴.
-			if (name.equals(obj.getName())) {
-				return obj;
+		if (slength == 1) { // 성씨가 입력된 경우
+			String lastname;
+			for (Customer obj : collect) { // Vector에 저장된 고객 중 이름이 일치하는 고객 있다면 리턴해줌. 없으면 null 리턴.
+				lastname = obj.getName().substring(0,1);
+				if (name.equals(lastname)) {
+					return obj;
+				}
 			}
+			return null;
 		}
 
-		return null;
+		else if (slength == 2) { // 이름이 입력된 경우
+			String firstname;
+			for (Customer obj : collect) { // Vector에 저장된 고객 중 이름이 일치하는 고객 있다면 리턴해줌. 없으면 null 리턴.
+				firstname = obj.getName().substring(1, 3);
+				if (name.equals(firstname)) {
+					return obj;
+				}
+			}
+			return null;
+		}
+
+		else {
+			String fullname;
+			for (Customer obj : collect) { // Vector에 저장된 고객 중 이름이 일치하는 고객 있다면 리턴해줌. 없으면 null 리턴.
+				fullname = obj.getName();
+				if (name.equals(fullname)) {
+					return obj;
+				}
+			}
+			return null;
+		}
 	}
 
 	@Override
